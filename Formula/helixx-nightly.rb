@@ -2,9 +2,9 @@
 class HelixxNightly < Formula
   desc "Opinionated fork of the Helix text editor (nightly build)"
   homepage "https://hx.wronghorse.dev"
-  url "https://cdn.wronghorse.dev/helixx/nightly/e468ea9d3765cb22cb18ddb3478526e2f2cadfb2/helixx-nightly-aarch64-apple-darwin.tar.gz"
-  version "2026.10.24.162826"
-  sha256 "47ae42cdb04ed398d18192aaa0e985f0c7c8ed7ed33bab515fc8a571033430b1"
+  url "https://cdn.wronghorse.dev/helixx/nightly/beb69d601aa201f2eb2c414fb92208d93c2e98fc/helixx-nightly-aarch64-apple-darwin.tar.gz"
+  version "2026.10.26.191035"
+  sha256 "93b32e40829c9c7c8319f2350a32188bf5b2edfb3311d9315ec6413e2fc52d46"
   license "MPL-2.0"
 
   on_macos do
@@ -15,25 +15,24 @@ class HelixxNightly < Formula
     depends_on arch: :x86_64
 
     on_intel do
-      url "https://cdn.wronghorse.dev/helixx/nightly/e468ea9d3765cb22cb18ddb3478526e2f2cadfb2/helixx-nightly-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "8f99009d6951b7a0c5c1e0084d9e1305e9576d021a1b478b6f09d3b3ed0f88b7"
+      url "https://cdn.wronghorse.dev/helixx/nightly/beb69d601aa201f2eb2c414fb92208d93c2e98fc/helixx-nightly-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "c414e189b172b4b70faede754996734f44b3d238277b46f136e944433f290864"
     end
   end
 
-  conflicts_with "helix", because: "both install `hx`"
-  conflicts_with "helixx", because: "both install `hx`"
+  conflicts_with "helixx", because: "both install `hxx`"
 
   def install
-    # hx finds runtime/ beside its resolved path, so keep both in libexec.
-    libexec.install "hx", "runtime"
-    bin.install_symlink libexec/"hx"
-    bash_completion.install "contrib/completion/hx.bash" => "hx"
-    zsh_completion.install "contrib/completion/hx.zsh" => "_hx"
-    fish_completion.install "contrib/completion/hx.fish"
+    # hxx finds runtime/ beside its resolved path, so keep both in libexec.
+    libexec.install "hxx", "runtime"
+    bin.install_symlink libexec/"hxx"
+    bash_completion.install "contrib/completion/hxx.bash" => "hxx"
+    zsh_completion.install "contrib/completion/hxx.zsh" => "_hxx"
+    fish_completion.install "contrib/completion/hxx.fish"
   end
 
   test do
-    assert_match "helix #{version} (", shell_output("#{bin}/hx --version")
-    assert_match(/Tree-sitter parser: .*✓/, shell_output("#{bin}/hx --health rust"))
+    assert_match "helix #{version} (", shell_output("#{bin}/hxx --version")
+    assert_match(/Tree-sitter parser: .*✓/, shell_output("#{bin}/hxx --health rust"))
   end
 end
