@@ -2,9 +2,9 @@
 class HelixxNightly < Formula
   desc "Opinionated fork of the Helix text editor (nightly build)"
   homepage "https://hx.wronghorse.dev"
-  url "https://cdn.wronghorse.dev/helixx/nightly/beb69d601aa201f2eb2c414fb92208d93c2e98fc/helixx-nightly-aarch64-apple-darwin.tar.gz"
-  version "2026.10.26.191035"
-  sha256 "93b32e40829c9c7c8319f2350a32188bf5b2edfb3311d9315ec6413e2fc52d46"
+  url "https://cdn.wronghorse.dev/helixx/nightly/54730f27ba4fb58b6e61314d7273061ba390fd1d/helixx-nightly-aarch64-apple-darwin.tar.gz"
+  version "2026.10.27.130907"
+  sha256 "3893120d37be7707b76e05f40d648fcb26775d07b5fec3f7ee084e56767e9160"
   license "MPL-2.0"
 
   on_macos do
@@ -15,12 +15,12 @@ class HelixxNightly < Formula
     depends_on arch: :x86_64
 
     on_intel do
-      url "https://cdn.wronghorse.dev/helixx/nightly/beb69d601aa201f2eb2c414fb92208d93c2e98fc/helixx-nightly-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "c414e189b172b4b70faede754996734f44b3d238277b46f136e944433f290864"
+      url "https://cdn.wronghorse.dev/helixx/nightly/54730f27ba4fb58b6e61314d7273061ba390fd1d/helixx-nightly-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "840ff813f1b534bf1405bc1f7f4a9df11a65212ce0049d14139a220b42b21a9b"
     end
   end
 
-  conflicts_with "helixx", because: "both install `hxx`"
+  conflicts_with "wronghorse/tap/helixx", because: "both install `hxx`"
 
   def install
     # hxx finds runtime/ beside its resolved path, so keep both in libexec.
