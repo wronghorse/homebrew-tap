@@ -2,9 +2,9 @@
 class HelixxNightly < Formula
   desc "Opinionated fork of the Helix text editor (nightly build)"
   homepage "https://hx.wronghorse.dev"
-  url "https://cdn.wronghorse.dev/helixx/nightly/54730f27ba4fb58b6e61314d7273061ba390fd1d/helixx-nightly-aarch64-apple-darwin.tar.gz"
-  version "2026.10.27.130907"
-  sha256 "3893120d37be7707b76e05f40d648fcb26775d07b5fec3f7ee084e56767e9160"
+  url "https://cdn.wronghorse.dev/helixx/nightly/0ae801e6786fc5324362062a0dc82ecadd3f14e5/helixx-nightly-aarch64-apple-darwin.tar.gz"
+  version "2026.10.27.141134"
+  sha256 "a185364a97f3601f244f78ef29128c1a095f6c796471fda0dbff712b2c6d8875"
   license "MPL-2.0"
 
   on_macos do
@@ -15,8 +15,8 @@ class HelixxNightly < Formula
     depends_on arch: :x86_64
 
     on_intel do
-      url "https://cdn.wronghorse.dev/helixx/nightly/54730f27ba4fb58b6e61314d7273061ba390fd1d/helixx-nightly-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "840ff813f1b534bf1405bc1f7f4a9df11a65212ce0049d14139a220b42b21a9b"
+      url "https://cdn.wronghorse.dev/helixx/nightly/0ae801e6786fc5324362062a0dc82ecadd3f14e5/helixx-nightly-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "e7309e1f301594667f2a31a3787a3c147ecb66eba7b1c181a1fc6d6f497fcdf0"
     end
   end
 
